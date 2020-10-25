@@ -1,5 +1,5 @@
 # dataz-project
-basic Angular template project
+Basic Angular template project
 
 
 "@firebase/app": "^0.6.10" <br />
