@@ -26,27 +26,27 @@ export class TablePickReceiverComponent implements AfterViewInit, OnInit {
   displayedColumns = ['id', 'firstName', 'lastName', 'phone', 'idDoc'];
 
 
-  constructor(private _sendGiftService: SendGiftService) { }
+  constructor(private sendGiftService: SendGiftService) { }
 
 
 
   ngOnInit(): void {
     this.dataSource = new TablePickReceiverDataSource();
 
-    this._sendGiftService.getSenders().subscribe(
+    this.sendGiftService.getSenders().subscribe(
      res => this.dataSource.data = res
     );
 
 
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
   }
 
-  applyFilter(filterValue: string) {
+  applyFilter(filterValue: string): void {
     // filterValue = filterValue.trim(); // Remove whitespace
     // filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
     // this.dataSource.filter = filterValue;

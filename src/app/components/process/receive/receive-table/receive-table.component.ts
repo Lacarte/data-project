@@ -22,7 +22,7 @@ export class ReceiveTableComponent implements AfterViewInit, OnInit {
     this.dataSource = new ReceiveTableDataSource();
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;

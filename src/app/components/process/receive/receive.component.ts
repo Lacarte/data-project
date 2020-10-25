@@ -100,7 +100,7 @@ export class ReceiveComponent implements OnInit {
   }
 
 
- reset(){
+ reset(): void{
 
     // this.searchGiftForm.patchValue({
     //   country: null,
@@ -112,7 +112,7 @@ export class ReceiveComponent implements OnInit {
  }
 
 
-   toggleFilterSearch(){
+   toggleFilterSearch(): void{
      this.isOpenedFilterSearch = ! this.isOpenedFilterSearch;
    }
 

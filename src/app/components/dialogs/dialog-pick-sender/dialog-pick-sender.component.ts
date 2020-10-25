@@ -35,14 +35,14 @@ searchSender(): void {
 }
 
 
-close() {
+close(): void{
   this.sendGiftService.senders =  [];
   this.sendGiftService.senderPeople = [];
   this.sendGiftService.isSenderExist = false;
 }
 
 
-hideNotification() {
+hideNotification(): void {
   this.sendGiftService.showNotif = false;
   console.log('change');
 }

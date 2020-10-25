@@ -34,7 +34,7 @@ export class  SendGiftService extends  Facade<SendGift> {
   }
 
 
-  addGift(gift) {
+  addGift(gift): void {
 
     console.log(gift);
   }

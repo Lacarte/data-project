@@ -73,7 +73,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
     });
   }
 
-ngOnDestroy(){
+ngOnDestroy(): void{
 this.isLtMdSub.unsubscribe();
 }
 

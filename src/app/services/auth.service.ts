@@ -15,7 +15,7 @@ import { UIService } from '../services/ui.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment as env} from '../../environments/environment';
 import { Login } from '../interfaces/login';
-import { userAuth } from '../interfaces/user-auth';
+import { UserAuth } from '../interfaces/user-auth';
 import { User } from 'firebase';
 
 @Injectable({
@@ -42,8 +42,8 @@ export class AuthService {
   // }
 
   securityObject: AppUserAuth = new AppUserAuth();
-  
-  url:string = env.apiBaseUrl;
+
+  url: string = env.apiBaseUrl;
 
   constructor(
     private http: HttpClient,
@@ -159,13 +159,13 @@ export class AuthService {
   //       }));
   // }
 
-  loginProcess(login: Login): Observable<userAuth> {
+  loginProcess(login: Login): Observable<UserAuth> {
     // console.log(login);
     // console.log(this.environment);
-    return this.http.post<userAuth>(this.url, login).pipe(
+    return this.http.post<UserAuth>(this.url, login).pipe(
       tap(user => {
         console.log(user);
-        //this.subject.next(user);
+        // this.subject.next(user);
         localStorage.setItem('AUTH_DATA', JSON.stringify(user));
         this.router.navigate(['/']);
       }),

@@ -54,9 +54,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  ngAfterViewInit() {}
+  ngAfterViewInit(): void {}
 
-  public initializeFormGroup() {
+  public initializeFormGroup(): void {
     this.loginForm.setValue({
       $key: null,
       email: '',
@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  onSubmit(form: NgForm) {
+  onSubmit(form: NgForm): void {
     console.log('form.valid => ', form.valid);
 
     if (form.valid) {

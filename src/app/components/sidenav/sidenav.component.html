@@ -146,7 +146,7 @@
       <mat-icon>menu</mat-icon>
       </button>
 
-    <button  mat-icon-button *ngIf="sidenav.opened && !(uiService.getIsLtMd() | async )  === (false)" (click)="isSidenaveText = !isSidenaveText">
+    <button  mat-icon-button *ngIf="sidenav.opened && (uiService.getIsLtMd() | async )  === (false)" (click)="isSidenaveText = !isSidenaveText">
       <mat-icon>read_more</mat-icon>
      </button>
 

@@ -36,7 +36,7 @@ export class PingServerService extends Facade<Ping> {
     }
   }
 
-  connected(data: boolean) {
+  connected(data: boolean): void {
     this.connState = data;
     this.connected$.next(this.connState);
   }

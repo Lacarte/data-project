@@ -97,11 +97,11 @@ export class SendComponent implements OnInit, AfterViewInit {
     });
   }
 
-  tst() {
+  tst(): void {
     this.endpointAndDataService.getAll();
   }
 
-  save() {
+  save(): void {
     console.log();
   }
 }

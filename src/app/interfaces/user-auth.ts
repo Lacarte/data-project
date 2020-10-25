@@ -1,4 +1,4 @@
-export interface userAuth {
+export interface UserAuth {
   meta: Meta;
   response: Response;
 }

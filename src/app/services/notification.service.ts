@@ -14,7 +14,7 @@ export class NotificationService {
 
   };
 
-  success(msg) {
+  success(msg): void {
     this.config.panelClass = ['success'];
     this.snackBar.open(msg, '', this.config);
   }

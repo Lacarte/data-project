@@ -5,70 +5,70 @@ import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable()
 export class UIService {
 
-//is less than medium screen 
-  private _isLtMd = new BehaviorSubject<boolean>(false);
-  private _isLtMd$ = this._isLtMd.asObservable();
+// is less than medium screen
+  private isLtMdBe = new BehaviorSubject<boolean>(false);
+  private isLtMd$ = this.isLtMdBe.asObservable();
 
-//sidenav 
-  private _isOpen = new BehaviorSubject<boolean>(false);
-  private _isOpen$ = this._isOpen.asObservable();
+// sidenav
+  private isOpenBe = new BehaviorSubject<boolean>(false);
+  private isOpen$ = this.isOpenBe.asObservable();
 
-//sidenavtext 
-  private _sidenavText = new BehaviorSubject<boolean>(false);
-  private _sidenavText$ = this._sidenavText.asObservable();
+// sidenavtext
+  private sidenavTextBe = new BehaviorSubject<boolean>(false);
+  private sidenavText$ = this.sidenavTextBe.asObservable();
 
 
   constructor() { }
 
-  set isLtMd(new_isLtMd: boolean) {
-    if(new_isLtMd){
-      //console.log("lt md");
+  set isLtMd(newIsLtMd: boolean) {
+    if (newIsLtMd){
+      // console.log("lt md");
     }else{
-       //console.log("big");
-   
+       // console.log("big");
+
     }
-    this._isLtMd.next(new_isLtMd);
+    this.isLtMdBe.next(newIsLtMd);
   }
 
   getIsLtMd(): Observable<boolean> {
-    return this._isLtMd$;
+    return this.isLtMd$;
   }
 
-  //to get the last value of the behavior subject
+  // to get the last value of the behavior subject
   getIsLtM(): boolean {
-    return this._isOpen.getValue();
+    return this.isOpenBe.getValue();
   }
 
-  set isOpen(new_isOpen: boolean) {
-    //console.log('nav state',new_isOpen);
-    this._isOpen.next(new_isOpen);
+  set isOpen(newIsOpen: boolean) {
+    // console.log('nav state',new_isOpen);
+    this.isOpenBe.next(newIsOpen);
   }
 
   getIsOpen(): Observable<boolean> {
-    return this._isOpen$;
+    return this.isOpen$;
   }
 
-//to get the last value of the behavior subject
+// to get the last value of the behavior subject
   getValueIsOpen(): boolean {
-    return this._isOpen.getValue();
+    return this.isOpenBe.getValue();
   }
 
-  toggleNav() {
-    this._isOpen.next(!this._isOpen.getValue());
+  toggleNav(): void {
+    this.isOpenBe.next(!this.isOpenBe.getValue());
   }
 
 
- set sidenavText(new_sidenavText: boolean) {
-    this._sidenavText.next(new_sidenavText);
+ set sidenavText(newSidenavText: boolean) {
+    this.sidenavTextBe.next(newSidenavText);
   }
 
   getSidenavText(): Observable<boolean> {
-    return this._sidenavText$;
+    return this.sidenavText$;
   }
 
-  //to get the last value of the behavior subject
+  // to get the last value of the behavior subject
   getValueSidenavText(): boolean {
-    return this._sidenavText.getValue();
+    return this.sidenavTextBe.getValue();
   }
 
 

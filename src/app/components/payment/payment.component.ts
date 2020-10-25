@@ -37,7 +37,7 @@ export class PaymentComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  applyFilter(event: Event) {
+  applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }

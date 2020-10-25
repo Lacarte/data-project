@@ -1,9 +1,9 @@
-import {animation,style,animate,trigger,transition,useAnimation,state} from '@angular/animations'
+import {animation, style, animate, trigger, transition, useAnimation, state} from '@angular/animations';
 
 
 export const fadeIn = animation([
-  style({opacity:0}),
-  animate("1500ms",style({opacity:1}))
+  style({opacity: 0}),
+  animate('1500ms', style({opacity: 1}))
 ]);
 
 // export const fadeIn = animation([
@@ -12,12 +12,12 @@ export const fadeIn = animation([
 // ]);
 
 export const fadeOut = animation([
-  animate("1500ms",style({opacity:0}))
+  animate('1500ms', style({opacity: 0}))
 ]);
 
-export const fadeInOut = trigger('fadeInOut',[
-transition('void => *',useAnimation(fadeIn)),
-transition('* => void',useAnimation(fadeOut)),
+export const fadeInOut = trigger('fadeInOut', [
+transition('void => *', useAnimation(fadeIn)),
+transition('* => void', useAnimation(fadeOut)),
 ]);
 
 

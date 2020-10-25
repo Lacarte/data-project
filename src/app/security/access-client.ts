@@ -1,4 +1,4 @@
-import { userAuth } from "../interfaces/user-auth";
+import { UserAuth } from "../interfaces/user-auth";
 
 /*
  * To verify the what kind of permission the user has.
@@ -7,7 +7,7 @@ import { userAuth } from "../interfaces/user-auth";
 export class AccessClient {
 
   static hasAccess(element: string): boolean {
-    const user:userAuth = JSON.parse(sessionStorage.getItem('AUTH_DATA'));
+    const user:UserAuth = JSON.parse(sessionStorage.getItem('AUTH_DATA'));
     let permissions: string[];
     let found: string;
 

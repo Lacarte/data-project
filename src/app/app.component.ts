@@ -4,22 +4,22 @@ import {
   AfterViewInit,
   ChangeDetectorRef,
   OnDestroy
-} from "@angular/core";
-import { MediaObserver, MediaChange } from "@angular/flex-layout";
-import { UIService } from "./services/ui.service";
-import { Subscription } from "rxjs";
+} from '@angular/core';
+import { MediaObserver, MediaChange } from '@angular/flex-layout';
+import { UIService } from './services/ui.service';
+import { Subscription } from 'rxjs';
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"]
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, AfterViewInit, OnDestroy  {
-  title = "Ban'mPa'm";
+  title = 'Ban\'mPa\'m';
   private mediaSub: Subscription;
-   
-  //private mediaSub: Subscription;
- 
+
+  // private mediaSub: Subscription;
+
   constructor(
     public uiService: UIService,
     private cdRef: ChangeDetectorRef,
@@ -31,7 +31,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy  {
 
 
 
-  ngOnInit() {
+  ngOnInit(): void {
 
   this.mediaSub = this.mediaObserver.asObservable().subscribe((change: MediaChange[])  => {
 //       // console.log(change[0].mqAlias);
@@ -40,18 +40,18 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy  {
        this.uiService.isLtMd =  (change[0].mqAlias === 'md' || change[0].mqAlias === 'sm' || change[0].mqAlias === 'xs');
       // this.uiService.isLtMd =  (change[0].mqAlias === 'md' || change[0].mqAlias === 'sm' || change[0].mqAlias === 'xs');
 //  console.log(change);
- 
+
    });
 
 
   }
 
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.cdRef.detectChanges();
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     if (this.mediaSub) {
       this.mediaSub.unsubscribe();
     }
