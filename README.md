@@ -1,2 +1,2 @@
-# data-project
+# dataz-project
 basic Angular template project
