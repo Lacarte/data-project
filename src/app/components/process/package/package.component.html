@@ -1,0 +1,162 @@
+<form fxFlex="auto" fxLayout="column" novalidate>
+
+  <div class="mb-3" fxLayoutGap="25px" fxFlex="auto" fxLayout="row" fxLayout.lt-md="column">
+
+    <mat-card class="example-card pb-5" fxFlex="50" fxLayout="column">
+      <mat-card-header>
+        <mat-card-title>Client Info</mat-card-title>
+      </mat-card-header>
+      <mat-card-content fxLayoutGap="1%" fxLayout="column" fxFlex="auto">
+        <div class="row" fxFlex="auto" fxLayout="row" fxLayoutAlign="end center" fxLayout.lt-md="column">
+          <button mat-stroked-button class="btn-round-corner"  color="primary">
+            <mat-icon>search</mat-icon>
+          </button>
+        </div>
+
+        <div class="row" fxLayoutGap="1%" fxFlex="auto" fxLayout="row" fxLayout.lt-md="column">
+          <mat-form-field fxFlex="auto">
+            <span matPrefix>+&nbsp;</span>
+            <input type="tel" matInput placeholder="Phone" inputmode="tel" required />
+            <mat-error>This field is required only, number please</mat-error>
+            <mat-icon matSuffix fontSet="fas" fontIcon="fa-phone"></mat-icon>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="auto">
+            <input matInput placeholder="Email" inputmode="email" />
+            <mat-error> Please enter a valid email address </mat-error>
+            <mat-error> Email is <strong>required</strong> </mat-error>
+            <mat-icon matSuffix fontSet="fas" fontIcon="fa-at"></mat-icon>
+          </mat-form-field>
+        </div>
+
+        <div fxLayoutGap="1%" fxFlex="auto" fxLayout="row" fxLayout.lt-md="column">
+          <mat-form-field fxFlex="auto">
+            <input matInput placeholder="First Name" required />
+            <mat-error>This field is required</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="auto">
+            <input matInput placeholder="Last Name" required />
+            <mat-error>This field is required</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="row" fxLayoutGap="1%" fxFlex="auto" fxLayout="row" fxLayout.lt-md="column">
+          <mat-form-field fxFlex="auto">
+            <mat-label>Doc Type</mat-label>
+            <mat-select #fontSize value="ID">
+              <mat-option>
+                <span mat-button>
+                  <mat-icon fontSet="fas" fontIcon="fa-plus"> </mat-icon>
+                </span>
+              </mat-option>
+
+              <mat-option></mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="auto">
+            <input type="text" matInput placeholder="ID" />
+            <mat-error>This field is required</mat-error>
+            <!-- <mat-icon matSuffix fontSet="fas" fontIcon="fa-id-card"></mat-icon> -->
+          </mat-form-field>
+        </div>
+
+        <div class="row" fxLayoutGap="1%" fxFlex="auto" fxLayout="row" fxLayout.lt-md="column">
+          <mat-form-field fxFlex="auto">
+            <mat-label>Country</mat-label>
+            <mat-select #fontSize value="ID">
+              <mat-option>
+                <span mat-button>
+                  <mat-icon fontSet="fas" fontIcon="fa-plus"> </mat-icon>
+                </span>
+              </mat-option>
+
+              <mat-option></mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="auto">
+            <mat-label>City</mat-label>
+            <mat-select #fontSize value="ID">
+              <mat-option>
+                <span mat-button>
+                  <mat-icon fontSet="fas" fontIcon="fa-plus"> </mat-icon>
+                </span>
+              </mat-option>
+
+              <mat-option></mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="row" fxLayoutGap="1%" fxFlex="auto" fxLayout="row" fxLayout.lt-md="column">
+          <mat-form-field class="example-full-width" fxFlex="100" appearance="fill">
+            <mat-label>Address</mat-label>
+            <textarea matInput placeholder="c/"></textarea>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="example-card" fxFlex="50`" fxLayout="column">
+      <mat-card-header>
+        <mat-card-title> Group Asignation </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content fxLayoutGap="25px" fxLayoutAlign="start stretch" fxLayout="column" fxFlex="auto">
+
+        <div class="row" fxFlex="auto" fxLayout="row" fxLayout.lt-md="column">
+          <mat-form-field fxFlex="auto">
+            <mat-label>Select a Group</mat-label>
+            <mat-select #fontSize value="ID">
+              <mat-option>
+                <span mat-button>
+                  <mat-icon fontSet="fas" fontIcon="fa-plus"> </mat-icon>
+                </span>
+              </mat-option>
+
+              <mat-option></mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+
+
+
+
+  </div>
+
+
+      <div class="example-card" fxFlex="50`" fxLayout="column">
+
+
+          <div fxLayoutGap="1%" fxLayoutAlign="end center" fxLayout="row" fxLayout.lt-md="column">
+
+            <div fxFlex="25" >
+              <button mat-raised-button class="btn-round-corner" color="primary" fxFlex="auto" type="submit">
+                <!-- <mat-icon> create_new_folder </mat-icon> -->
+                &nbsp; Create Package
+              </button>
+            </div>
+
+
+          </div>
+
+      </div>
+
+
+  <div fxFlex="auto" fxLayout="row">
+    <!-- <br>Dirty: {{ sendForm.dirty }}
+		<br>Touched: {{ sendForm.touched }}
+		<br>Valid: {{ sendForm.valid }}
+		<br>Value: {{ sendForm.value | json }} -->
+  </div>
+
+  <!-- <div fxFlex="auto" fxLayout="column">
+    {{isLoading}}
+		<button  mat-raised-button (click)="tst()">tst</button>
+	</div> -->
+</form>

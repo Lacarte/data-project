@@ -1,27 +1,32 @@
-<div fxLayout="column">
-<div class="title-header mb-3">send / receive</div>
+<ng-template #crudPackage >
+  <app-crud-package></app-crud-package>
+  <app-dialog-button color="primary" (click)="closeDialog()">Close</app-dialog-button>
+</ng-template>
 
-<mat-tab-group mat-stretch-tabs mat-align-tabs="center"  [@.disabled]="true">
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <mat-icon>card_giftcard</mat-icon>
-     &nbsp;  Send
-    </ng-template>
-   <div class="row flex-row-reverse mx-3">
-    <button mat-icon-button class="btn-round-corner" (click)="dialogSendHistory()">
-    <mat-icon fontSet="fas" fontIcon="fa-history"></mat-icon>
-  </button>
-</div>
-    <app-send></app-send>
-  </mat-tab>
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <!-- <mat-icon class="example-tab-icon">payment</mat-icon> -->
-      <mat-icon  fontSet="fas" fontIcon="fa-box" ></mat-icon>
-      &nbsp; Receive
-    </ng-template>
-   
-    <app-receive></app-receive>
-  </mat-tab>
-</mat-tab-group>
+<div fxLayout="column">
+  <div class="title-header mb-3">Package / Group</div>
+  <mat-tab-group [(selectedIndex)]="tabIndex" #processTabGroup mat-stretch-tabs mat-align-tabs="center"
+    [@.disabled]="true">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon>local_shipping</mat-icon>
+        &nbsp; Package
+      </ng-template>
+      <div fxLayoutAlign="end center" fxLayout="row">
+        <button (click)="openCrudPackage()" mat-icon-button class="btn-round-corner">
+          <mat-icon fontSet="fas" fontIcon="fa-history"></mat-icon>
+        </button>
+      </div>
+      <app-package (gotoTabIndex)="gotoTabIndex()"></app-package>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <!-- <mat-icon class="example-tab-icon">payment</mat-icon> -->
+        <mat-icon fontSet="fas" fontIcon="fa-layer-group"></mat-icon>
+        &nbsp; Group
+      </ng-template>
+      <app-group></app-group>
+    </mat-tab>
+  </mat-tab-group>
 </div>

@@ -1,3 +1,4 @@
+import { GlobalDialogModule } from './shared/components/global-dialog/global-dialog.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -46,7 +47,7 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { DialogRegisterUserComponent } from './components/dialogs/dialog-register-user/dialog-register-user.component';
 import { DataService } from './services/data.service';
 import { ShellComponent } from './components/shell/shell.component';
-import { LoaderComponent } from './shared/loader/loader.component';
+import { LoaderComponent } from './shared/components/loader/loader.component';
 import { LoaderService } from './services/loader.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoaderInterceptor } from './services/interceptors/loader.interceptor';
@@ -67,6 +68,16 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { MyInMemoryService } from './services/in-memory/my-in-memory.service';
 import { EndpointAndDataService } from './services/in-memory/endpoint-and-data.service';
 import { environment as env } from '../environments/environment';
+import { PackageComponent } from './components/process/package/package.component';
+import { GroupComponent } from './components/process/group/group.component';
+import { SearchClientComponent } from './components/process/search-client/search-client.component';
+import { CrudDoctypeComponent } from './components/manage/crud-doctype/crud-doctype.component';
+import { CrudCountryComponent } from './components/manage/crud-country/crud-country.component';
+import { CrudSectorComponent } from './components/manage/crud-sector/crud-sector.component';
+import { CrudPackageComponent } from './components/manage/crud-package/crud-package.component';
+import { CrudGroupComponent } from './components/manage/crud-group/crud-group.component';
+import { CrudClientComponent } from './components/manage/crud-client/crud-client.component';
+import { CrudUserComponent } from './components/manage/crud-user/crud-user.component';
 
 @NgModule({
   declarations: [
@@ -100,10 +111,19 @@ import { environment as env } from '../environments/environment';
     AdminComponent,
     UserComponent,
     DistributorsComponent,
-
     LocationsComponent,
     PermissionsComponent,
-    RolesClaimsComponent
+    RolesClaimsComponent,
+    PackageComponent,
+    GroupComponent,
+    SearchClientComponent,
+    CrudDoctypeComponent,
+    CrudCountryComponent,
+    CrudSectorComponent,
+    CrudPackageComponent,
+    CrudGroupComponent,
+    CrudClientComponent,
+    CrudUserComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -126,6 +146,7 @@ import { environment as env } from '../environments/environment';
     ClipboardModule,
     LayoutModule,
     FlexLayoutModule,
+    GlobalDialogModule,
     // import HttpClientInMemoryWebApiModule after HttpClientModule
     HttpClientInMemoryWebApiModule.forRoot(MyInMemoryService, {
       delay: 2500,
@@ -157,7 +178,7 @@ import { environment as env } from '../environments/environment';
     DialogSendConfirmationComponent,
     DialogSendHistoryComponent,
     DialogDeliverConfirmationComponent,
-    DialogLogoutComponent
+    DialogLogoutComponent,
   ]
 })
 export class AppModule {}

@@ -14,7 +14,7 @@
 		<mat-nav-list>
 			<mat-list-item *ngIf="isLtMd" (click)="isSidenaveText = !isSidenaveText" class="mt-5"
 				[disableRipple]="true">
-				<mat-icon mat-list-icon style="scale(0.5); color:#666;">read_more</mat-icon>
+				<mat-icon mat-list-icon style="scale(0.5); color:#666">read_more</mat-icon>
 				<!-- <mat-slide-toggle  (click)="isSidenaveText = !isSidenaveText"></mat-slide-toggle> -->
 				<!-- <mat-button-toggle (click)="isSidenaveText = !isSidenaveText">
     <mat-icon>menu_open</mat-icon>
@@ -52,12 +52,12 @@
 				</div>
 			</mat-list-item>
 
-			<mat-list-item routerLink="/payment" routerLinkActive="active">
+			<!-- <mat-list-item routerLink="/payment" routerLinkActive="active">
 				<mat-icon mat-list-icon>monetization_on</mat-icon>
 				<div *ngIf="isSidenaveText" class="sidenav-item">
 					<span class="lead">Balance</span>
 				</div>
-			</mat-list-item>
+			</mat-list-item> -->
 
 
 			<!-- <mat-list-item routerLink="/report" routerLinkActive="active">
@@ -66,7 +66,7 @@
         <span class="lead">Report</span>
       </div>
     </mat-list-item> - -->
-			<!-- 
+			<!--
     <mat-divider  *ngIf="securityObject.canAccessAdmin" ></mat-divider> -->
 
 
@@ -75,19 +75,19 @@
 			<mat-list-item routerLink="/settings" routerLinkActive="active">
 				<mat-icon mat-list-icon fontSet="fas" fontIcon="fa-cog"></mat-icon>
 				<div *ngIf="isSidenaveText" class="sidenav-item">
-					<span class="lead">Settings</span>
+					<span class="lead">Manage</span>
 				</div>
 			</mat-list-item>
 
 			<!-- <mat-list-item routerLink="/settings"  *ngIf="securityObject.canAccessAdmin" routerLinkActive="active"> -->
-			<mat-list-item routerLink="/admin" routerLinkActive="active">
+			<!-- <mat-list-item routerLink="/admin" routerLinkActive="active">
 				<mat-icon mat-list-icon fontSet="fas" fontIcon="fa-tools"></mat-icon>
 				<div *ngIf="isSidenaveText" class="sidenav-item">
 					<span class="lead">Admin</span>
 				</div>
 			</mat-list-item>
 
-
+ -->
 
 			<!-- <mat-accordion multi="true" [displayMode]="displayMode">
 				<mat-expansion-panel class="no-shadow">
@@ -164,8 +164,8 @@
       <span class="spacer"></span>
 
 
-				
-			
+
+
 
 
 			<button mat-icon-button  aria-label="Example icon-button with a menu">
